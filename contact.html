@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>İletişim</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Ninth navbar example">
+        <div class="container-xl">
+            <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" style="height:5rem ;"  ></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dropdown-navbar"
+                aria-controls="dropdown-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="dropdown-navbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Hakkımda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">İletişim</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                            aria-expanded="false">Diğer Sayfalar</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="my-city.html">Şehrim</a></li>
+                            <li><a class="dropdown-item" href="my-interests.html">İlgi Alanlarım</a></li>
+                            <li><a class="dropdown-item" href="my-resume.html">Özgeçmişim</a></li>
+                            <li><a class="dropdown-item" href="our-legacy.html">Mirasımız</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <a type="button" class="btn btn-outline-light mx-1" id="login" href="login.html">
+                    <i>Giriş Yap</i></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4 p-4 w-50 bg-dark text-white rounded-3">
+        <div class="h2">İLETİŞİM FORMU</div>
+        <hr class="bg-white">
+
+        <form action="view-contact.html" target="_blank" name="contact-form" ng-app="myApp"
+            ng-controller="FormController">
+
+            <div class="form-group ">
+                <label for="name">*İsim</label>
+                <input type="text" name="name" class="form-control" placeholder="İsminizi Girin" ng-model="name">
+                <span class="text-danger" ng-show="!name">İsim alanı boş bırakılamaz (AngularJS)</span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">*Email</label>
+                <input type="text" name="email" class="form-control" placeholder="E-mailinizi girin." ng-model="email">
+                <span class="text-danger d-block" ng-show="!email">Email alanı boş bırakılamaz (AngularJS)</span>
+                <span class="text-danger" ng-show="!isEmailValid()">Geçerli bir email adresi giriniz (AngularJS)</span>
+
+            </div>
+
+            <div class="form-group">
+                <label for="city">*Şehir</label> <br>
+                <select name="city" class="form-control" ng-model="city">
+                    <option value="-----">-----</option>
+                    <option value="Adana">Adana</option>
+                    <option value="Adıyaman">Adıyaman</option>
+                    <option value="Afyonkarahisar">Afyonkarahisar</option>
+                    <option value="Ağrı">Ağrı</option>
+                    <option value="Amasya">Amasya</option>
+                    <option value="Ankara">Ankara</option>
+                    <option value="Antalya">Antalya</option>
+                    <option value="Artvin">Artvin</option>
+                    <option value="Aydın">Aydın</option>
+                    <option value="Balıkesir">Balıkesir</option>
+                    <option value="Bilecik">Bilecik</option>
+                    <option value="Bingöl">Bingöl</option>
+                    <option value="Bitlis">Bitlis</option>
+                    <option value="Bolu">Bolu</option>
+                    <option value="Burdur">Burdur</option>
+                    <option value="Bursa">Bursa</option>
+                    <option value="Çanakkale">Çanakkale</option>
+                    <option value="Çankırı">Çankırı</option>
+                    <option value="Çorum">Çorum</option>
+                    <option value="Denizli">Denizli</option>
+                    <option value="Diyarbakır">Diyarbakır</option>
+                    <option value="Edirne">Edirne</option>
+                    <option value="Elazığ">Elazığ</option>
+                    <option value="Erzincan">Erzincan</option>
+                    <option value="Erzurum">Erzurum</option>
+                    <option value="Eskişehir">Eskişehir</option>
+                    <option value="Gaziantep">Gaziantep</option>
+                    <option value="Giresun">Giresun</option>
+                    <option value="Gümüşhane">Gümüşhane</option>
+                    <option value="Hakkâri">Hakkâri</option>
+                    <option value="Hatay">Hatay</option>
+                    <option value="Isparta">Isparta</option>
+                    <option value="Mersin">Mersin</option>
+                    <option value="İstanbul">İstanbul</option>
+                    <option value="İzmir">İzmir</option>
+                    <option value="Kars">Kars</option>
+                    <option value="Kastamonu">Kastamonu</option>
+                    <option value="Kayseri">Kayseri</option>
+                    <option value="Kırklareli">Kırklareli</option>
+                    <option value="Kırşehir">Kırşehir</option>
+                    <option value="Kocaeli">Kocaeli</option>
+                    <option value="Konya">Konya</option>
+                    <option value="Kütahya">Kütahya</option>
+                    <option value="Malatya">Malatya</option>
+                    <option value="Manisa">Manisa</option>
+                    <option value="Kahramanmaraş">Kahramanmaraş</option>
+                    <option value="Mardin">Mardin</option>
+                    <option value="Muğla">Muğla</option>
+                    <option value="Muş">Muş</option>
+                    <option value="Nevşehir">Nevşehir</option>
+                    <option value="Niğde">Niğde</option>
+                    <option value="Ordu">Ordu</option>
+                    <option value="Rize">Rize</option>
+                    <option value="Sakarya">Sakarya</option>
+                    <option value="Samsun">Samsun</option>
+                    <option value="Siirt">Siirt</option>
+                    <option value="Sinop">Sinop</option>
+                    <option value="Sivas">Sivas</option>
+                    <option value="Tekirdağ">Tekirdağ</option>
+                    <option value="Tokat">Tokat</option>
+                    <option value="Trabzon">Trabzon</option>
+                    <option value="Tunceli">Tunceli</option>
+                    <option value="Şanlıurfa">Şanlıurfa</option>
+                    <option value="Uşak">Uşak</option>
+                    <option value="Van">Van</option>
+                    <option value="Yozgat">Yozgat</option>
+                    <option value="Zonguldak">Zonguldak</option>
+                    <option value="Aksaray">Aksaray</option>
+                    <option value="Bayburt">Bayburt</option>
+                    <option value="Karaman">Karaman</option>
+                    <option value="Kırıkkale">Kırıkkale</option>
+                    <option value="Batman">Batman</option>
+                    <option value="Şırnak">Şırnak</option>
+                    <option value="Bartın">Bartın</option>
+                    <option value="Ardahan">Ardahan</option>
+                    <option value="Iğdır">Iğdır</option>
+                    <option value="Yalova">Yalova</option>
+                    <option value="Karabük">Karabük</option>
+                    <option value="Kilis">Kilis</option>
+                    <option value="Osmaniye">Osmaniye</option>
+                    <option value="Düzce">Düzce</option>
+                </select>
+                <span class="text-danger" ng-show="!city">Şehir alanı boş bırakılamaz (AngularJS)</span>
+
+            </div>
+            <div class="form-group">
+                <label for="gender">*Cinsiyet</label> <br>
+                <select name="gender" class="form-control" ng-model="gender">
+                    <option value="-----">-----</option>
+                    <option value="Erkek">Erkek</option>
+                    <option value="Kadın">Kadın</option>
+                    <option value="Diğer">Diğer</option>
+                </select>
+                <span class="text-danger" ng-show="!gender">Cinsiyet alanı boş bırakılamaz (AngularJS)</span>
+
+            </div>
+
+            <div class="form-group">
+                <label for="message">*Mesaj</label>
+                <textarea name="message" id="message" onkeyup="checkChar()" onkeydown="checkChar()" rows="5"
+                    class="form-control" ng-model="message"></textarea>
+                <span class="text-danger" ng-show="!message">Mesaj alanı boş bırakılamaz (AngularJS)</span>
+
+            </div>
+            <button class="btn my-3 btn-danger d-block w-100 mx-auto" type="reset">Temizle</button>
+            <button class="btn my-3 btn-success d-block w-100 mx-auto" type="submit" onclick="return control()">Gönder
+                (JS)
+            </button>
+            <button class="btn my-3 btn-primary d-block w-100 mx-auto" type="submit" ng-click="angularControl()"
+                ng-disabled="!isFormValid()">Gönder
+                (AngularJS)
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+
+<footer class="py-3 my-4 navbar-dark bg-dark ">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3 ">
+        <li class="nav-item"><a href="index.html" class="nav-link px-2 text-white">Hakkımda</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-white">İletişim</a></li>
+        <li class="nav-item"><a href="my-city.html" class="nav-link px-2 text-white">Şehrim</a></li>
+        <li class="nav-item"><a href="my-interests.html" class="nav-link px-2 text-white">İlgi Alanlarım</a></li>
+        <li class="nav-item"><a href="my-resume.html" class="nav-link px-2 text-white">Özgeçmişim</a></li>
+        <li class="nav-item"><a href="our-legacy.html" class="nav-link px-2 text-white">Mirasımız</a></li>
+        <li class="nav-item"><a href="login.html" class="nav-link px-2 text-white">Giriş Yap</a></li>
+    </ul>
+    <p class="text-center text-white">&copy; 2023 Company, Inc</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+    integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+    integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+    integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/contact.js"></script>
+
+</html>
